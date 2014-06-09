@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>主页</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/mycss.css" rel="stylesheet">
+    <script src="js/bootstrap.js"></script>
+    <script src="js/jquery-2.0.3.js"></script>
+
+</head>
+<body>
+
+<div class="jumbotron masthead" style="margin-top: -20px">
+    <div class="container">
+        <h1>SDUEditor</h1>
+
+        <p>所见即所得的书籍数字化编辑器</p>
+    </div>
+</div>
+
+<div class="container">
+    <div class="page-header">
+        <h1>创建...</h1>
+        <button class="btn btn-info btn-large"><a href="/edit_new" style="text-decoration:none">创建现代文</a></button>
+        <button class="btn btn-info btn-large"><a href="/editor" style="text-decoration:none">创建古文</a></button>
+    </div>
+    <div class="page-header">
+        <h1>打开...</h1>
+        <button class="btn btn-info btn-large"><a href="/editor" style="text-decoration:none">导入sDOC</a></button>
+    </div>
+
+    <div class="page-header">
+        <h2>历史记录</h2>
+        <ul class="wrap">
+        {% for record in records %}
+        <li class="item">
+            <div class="cover">
+                <img width="70px" height="100px" src="/img/images.jpg">
+            </div>
+            <div class="info">
+                <p>书名：<a href="/load/">{{ record.title }}</a></p>
+                <p>作者：{{ record.writer }}</p>
+                <p>国家/朝代：{{ record.nation }}</p>
+                <p>添加日期：{{ record.add_time }}</p>
+            </div>
+        </li>
+        {% endfor %}
+        </ul>
+    </div>
+
+</div>
+</body>
+</html>

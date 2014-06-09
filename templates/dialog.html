@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script src="http://cdn.bootcss.com/jquery/1.9.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#btn').click(function(){
+                var q = $('#q').val();
+               $.get('/search/',{'q':q}, function(data){
+                   var result = data.char;
+                    $('#result').val(result);
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+<input id="q" name="q">
+<button id="btn" type="submit">查询</button>
+<br/>
+<input id="result">
+</body>
+</html>
