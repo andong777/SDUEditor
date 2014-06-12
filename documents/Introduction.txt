@@ -1,0 +1,38 @@
+Web框架
+Django。后台逻辑
+
+页面部分
+使用了HTML、CSS、JavaScript、JQuery、Bootstrap
+
+编辑器实现
+主要使用Bootstrap-wysiwyg插件
+然后加入了竖排，竖排使用CSS的效果 参见http://www.zzsky.cn/build/content/1669.htm 等资料
+关键代码：
+<div id="editor" class="area tb-rl" contenteditable="true"></div>
+以及layout.css中的代码
+
+导出XML使用了Python的xml库，具体代码在util目录xmlhelper中
+
+实现了
+scode和sformat的接口，在util目录下定义。
+scode的调用：
+def search(request):
+    if request.method == "GET" and 'side' in request.GET and 'num' in request.GET and 'pinyin' in request.GET:
+        side = request.GET['side']
+        num = request.GET['num']
+        pinyin = request.GET['pinyin']
+    response_data = {}
+    response_data['status'] = 'OK'
+    response_data['char'] = "".join(scode.fetch(side=side, num=num, pinyin=pinyin))
+    return HttpResponse(json.dumps(response_data), content_type="application/json")
+
+sformat的调用：
+def export(request, type, title):
+    type = type.strip().lower()
+    title = title.strip().lower()
+    if type=='pdf':
+        sformat.exportPDF(title)
+    elif type=='image':
+        sformat.exportImage(title)
+    elif type=='html':
+        sformat.exportHTML(title)
