@@ -22,4 +22,5 @@ urlpatterns = patterns('',
     url(r'^save/$',views.save),
     url(r'^load/$',views.load),
     url(r'^search/$',views.search),
+    url(r'^export_(?P<type>.*)/(?P<title>.*)',views.export),
 )

@@ -1,5 +1,7 @@
 __author__ = 'andong'
 
+# 已废弃
+
 from django import forms
 
 class AncientBookForm(forms.Form):

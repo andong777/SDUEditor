@@ -96,28 +96,28 @@
                 <a class="btn" data-edit="undo" title="Undo (Ctrl/Cmd+Z)"><i class="icon-undo"></i></a>
             </div>
         </div>
-    <form action="" method="get">
+    <form action="/save/" method="get">
 
         <div id="editor" name="content" class="area lr-tb" contenteditable="true"></div>
         <div class="control-group">
             <label class="control-label" for="id_title">书名</label>
 
             <div class="controls">
-                <input id="title" name="title" class="span3">
+                <input id="title" name="title" class="span3" required>
             </div>
         </div>
         <div class="control-group">
             <label class="control-label" for="id_name">作者</label>
 
             <div class="controls">
-                <input id="writer" name="writer" class="span3">
+                <input id="writer" name="writer" class="span3" required>
             </div>
         </div>
         <div class="control-group">
             <label class="control-label" for="id_nation">国家</label>
 
             <div class="controls">
-                <input id="nation" name="nation" class="span2">
+                <input id="nation" name="nation" class="span2" required>
             </div>
         </div>
         <button class="btn btn-info btn-large"><a href="/save" style="text-decoration:none">保存</a></button>

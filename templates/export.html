@@ -5,9 +5,9 @@
 </head>
 <body>
 <strong>{{ title }}保存成功！</strong>
-<button>导出PDF</button>
-<button>导出图像</button>
-<button>导出HTML</button>
-<a href="/">返回首页</a>
+<button><a href="/export_pdf/{{ title }}">导出PDF</a></button>
+<button><a href="/export_image/{{ title }}">导出图像</a></button>
+<button><a href="/export_html/{{ title }}">导出网页</a></button>
+<br/><a href="/">返回首页</a>
 </body>
 </html>

@@ -6,8 +6,10 @@
     <script>
         $(document).ready(function(){
             $('#btn').click(function(){
-                var q = $('#q').val();
-               $.get('/search/',{'q':q}, function(data){
+                var side = $('#side').val();
+                var num = $('#num').val();
+                var pinyin = $('#pinyin').val();
+               $.get('/search/',{'side':side, 'num':num, 'pinyin':pinyin}, function(data){
                    var result = data.char;
                     $('#result').val(result);
                 });
@@ -16,9 +18,11 @@
     </script>
 </head>
 <body>
-<input id="q" name="q">
-<button id="btn" type="submit">查询</button>
+偏旁<input id="side" name="side"><br>
+笔画数<input id="num" name="pinyin"><br>
+拼音<input id="pinyin" name="pinyin"><br>
+<button id="btn">查询</button>
 <br/>
-<input id="result">
+结果：<input id="result">
 </body>
 </html>

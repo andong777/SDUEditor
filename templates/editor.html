@@ -54,7 +54,7 @@
     <script>
         $(document).ready(function(){
             $('#dialog_link').click(function () {
-                window.open ('dialog.html', 'newwindow', 'height=100, width=400, top=0, left=0, toolbar=no, menubar=no, scrollbars=no, resizable=no,location=n o, status=no')
+                window.open ('dialog.html', 'newwindow', 'height=200, width=400, top=0, left=0, toolbar=no, menubar=no, scrollbars=no, resizable=no,location=n o, status=no')
 });
         })
     </script>
@@ -75,7 +75,8 @@
                 <a class="btn dropdown-toggle" data-toggle="dropdown" title="Font Size"><i class="icon-text-height"></i>&nbsp;<b
                         class="caret"></b></a>
                 <ul class="dropdown-menu">
-                    <li><a data-edit="fontSize 5"><font size="5">Huge</font></a></li>
+                    <li><a data-edit="fontSize 7"><font size="7">Huge</font></a></li>
+                    <li><a data-edit="fontSize 5"><font size="5">Big</font></a></li>
                     <li><a data-edit="fontSize 3"><font size="3">Normal</font></a></li>
                     <li><a data-edit="fontSize 1"><font size="1">Small</font></a></li>
                 </ul>
@@ -109,28 +110,28 @@
             </div>
 
         </div>
-    <form action="/save/" method="GET">
+    <form action="/save/" method="get">
         <input id="content" name="content" type="hidden">
         <div id="editor" class="area tb-rl" contenteditable="true"></div>
         <div class="control-group">
             <label class="control-label" for="id_title">书名</label>
 
             <div class="controls">
-                <input id="title" name="title" class="span3">
+                <input id="title" name="title" class="span3" required>
             </div>
         </div>
         <div class="control-group">
             <label class="control-label" for="id_name">作者</label>
 
             <div class="controls">
-                <input id="writer" name="writer" class="span3">
+                <input id="writer" name="writer" class="span3" required>
             </div>
         </div>
         <div class="control-group">
             <label class="control-label" for="id_nation">朝代</label>
 
             <div class="controls">
-                <input id="nation" name="nation" class="span2">
+                <input id="nation" name="nation" class="span2" required>
             </div>
         </div>
         <button id="btn" class="btn btn-info btn-large" type="submit">保存</button>

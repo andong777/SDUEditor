@@ -27,6 +27,7 @@
     </div>
     <div class="page-header">
         <h1>打开...</h1>
+        <input type="file" name="file" id="file">
         <button class="btn btn-info btn-large"><a href="/editor" style="text-decoration:none">导入sDOC</a></button>
     </div>
 
@@ -39,7 +40,7 @@
                 <img width="70px" height="100px" src="/img/images.jpg">
             </div>
             <div class="info">
-                <p>书名：<a href="/load/">{{ record.title }}</a></p>
+                <p>书名：{{ record.title }}</p>
                 <p>作者：{{ record.writer }}</p>
                 <p>国家/朝代：{{ record.nation }}</p>
                 <p>添加日期：{{ record.add_time }}</p>
